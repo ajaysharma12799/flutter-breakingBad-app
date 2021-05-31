@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breakingbad_app/models/characterModel.dart';
-import 'package:flutter_breakingbad_app/widgets/Card.dart';
+import 'package:flutter_breakingbad_app/widgets/characterCard.dart';
 import 'package:http/http.dart' as http;
 import '../API.dart' show API;
 import 'dart:convert';
@@ -31,28 +31,32 @@ class _CharacterScreenState extends State<CharacterScreen> {
     return Container(
       child: Center(
         child: FutureBuilder<List<Character>>(
-          future: getCharacters(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return GridView.builder(
-                  itemCount: snapshot.data.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 0.7,
-                  ),
-                  itemBuilder: (ctx, index) {
-                    return CharacterCard(
-                      imageURL: snapshot.data[index].imageURL,
-                      characterName: snapshot.data[index].name,
-                      birthday: snapshot.data[index].birthDate,
-                      occupation: snapshot.data[index].occupation,
+            future: getCharacters(),
+            builder: (context, snapshot) {
+              return snapshot.hasData
+                  ? GridView.builder(
+                      itemCount: snapshot.data.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 0.7,
+                      ),
+                      itemBuilder: (ctx, index) {
+                        return CharacterCard(
+                          imageURL: snapshot.data[index].imageURL,
+                          characterName: snapshot.data[index].name,
+                          birthday: snapshot.data[index].birthDate,
+                          occupation: snapshot.data[index].occupation,
+                        );
+                      })
+                  : SizedBox(
+                      width: 50,
+                      height: 50,
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.lightBlue,
+                        strokeWidth: 5.0,
+                      ),
                     );
-                  });
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
-        ),
+            }),
       ),
     );
   }
