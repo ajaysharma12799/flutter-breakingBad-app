@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_breakingbad_app/screens/HomeScreen.dart';
 import 'package:flutter_breakingbad_app/screens/characterScreen.dart';
 import 'package:flutter_breakingbad_app/screens/episodeScreen.dart';
+import 'package:flutter_breakingbad_app/screens/searchScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: <String, WidgetBuilder>{
         CharacterScreen.routeName: (ctx) => CharacterScreen(),
-        EpisodeScreen.routeName: (ctx) => EpisodeScreen()
+        EpisodeScreen.routeName: (ctx) => EpisodeScreen(),
+        SearchScreen.routeName: (ctx) => SearchScreen()
       },
     );
   }

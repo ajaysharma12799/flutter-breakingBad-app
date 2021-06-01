@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breakingbad_app/screens/characterScreen.dart';
 import 'package:flutter_breakingbad_app/screens/episodeScreen.dart';
+import 'package:flutter_breakingbad_app/screens/searchScreen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -36,6 +42,11 @@ class HomeScreen extends StatelessWidget {
             CharacterScreen(),
             EpisodeScreen(),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.search),
+          backgroundColor: Colors.green,
+          onPressed: () => Navigator.pushNamed(context, SearchScreen.routeName),
         ),
       ),
     );
