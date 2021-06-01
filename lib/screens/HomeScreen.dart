@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.search),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.green,
           onPressed: () => Navigator.pushNamed(context, SearchScreen.routeName),
         ),
       ),
