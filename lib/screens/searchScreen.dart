@@ -16,12 +16,10 @@ class _SearchScreenState extends State<SearchScreen> {
   final textController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey();
   List<Character> breakingBadCharacters = [];
-
   Future<List<Character>> getSingleCharacter(String characterName) async {
     final response =
         await http.get(Uri.parse("${API}/characters?name=${characterName}"));
     List jsonResponse = json.decode(response.body);
-
     if (response.statusCode == 200) {
       return jsonResponse
           .map((element) => Character.fromJson(element))

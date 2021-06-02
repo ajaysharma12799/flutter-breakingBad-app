@@ -15,8 +15,6 @@ class _CharacterScreenState extends State<CharacterScreen> {
   Future<List<Character>> getCharacters() async {
     final response = await http.get(Uri.parse("${API}/characters"));
     List jsonResponse = json.decode(response.body);
-
-    print(jsonResponse);
     if (response.statusCode == 200) {
       return jsonResponse
           .map((element) => Character.fromJson(element))

@@ -15,7 +15,6 @@ class _EpisodeScreenState extends State<EpisodeScreen> {
   Future<List<Episode>> getEpisodes() async {
     final response = await http.get(Uri.parse("${API}/episodes"));
     List jsonResponse = json.decode(response.body);
-    print(jsonResponse);
     if (response.statusCode == 200) {
       return jsonResponse.map((element) => Episode.fromJson(element)).toList();
     } else {
