@@ -116,7 +116,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
               Container(
-                width: 400,
+                width: (MediaQuery.of(context).size.width as double) * 0.95,
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
