@@ -13,22 +13,22 @@ Packages Used :
 ## Project Images
 
 <img 
-    src="Screenshots/HomeScreen.png"
+    src="ScreenShots/HomeScreen.png"
     alt="Home Screen With Character Tab"
     width="250px"
 />
 <img 
-    src="Screenshots/EpisodeScreen.png"
+    src="ScreenShots/EpisodeScreen.png"
     alt="Home Screen With Episode Tab"
     width="250px"
 />
 <img 
-    src="Screenshots/SearchScreen.png"
+    src="ScreenShots/SearchScreen.png"
     alt="Search Screen With All Characters"
     width="250px"
 />
 <img 
-    src="Screenshots/SpecificCharacterSearchScreen.png"
+    src="ScreenShots/SpecificCharacterSearchScreen.png"
     alt="Search Screen With Specific Character"
     width="250px"
 />
