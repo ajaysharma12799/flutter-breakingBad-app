@@ -49,8 +49,7 @@ class _EpisodeScreenState extends State<EpisodeScreen> {
                     width: 50,
                     height: 50,
                     child: CircularProgressIndicator(
-                      backgroundColor: Colors.lightBlue,
-                      strokeWidth: 5.0,
+                      strokeWidth: 2,
                     ),
                   );
           },
